@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2563eb">
+    <title>百顺 - 进销存财务系统</title>
+    <link rel="stylesheet" href="css/style.css?v=20260816v3">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header id="app-header" class="app-header">
+            <button id="back-btn" class="header-back-btn" style="display:none;" onclick="App.goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>返回</span>
+            </button>
+            <h1 id="header-title" class="header-title">百顺</h1>
+            <button id="header-action-btn" class="header-action-btn" style="visibility:hidden;"></button>
+        </header>
+
+        <!-- Main Content -->
+        <main id="app-content" class="app-content">
+            <!-- Pages rendered dynamically by app.js -->
+            <div class="loading-screen">
+                <div class="spinner"></div>
+                <p>加载中...</p>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav" class="bottom-nav">
+            <a class="nav-item active" data-page="dashboard" onclick="App.switchTab('dashboard')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12l9-9 9 9M5 10v10h4v-6h6v6h4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>首页</span>
+            </a>
+            <a class="nav-item" data-page="purchase" onclick="App.switchTab('purchase')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3h2l2 12h12l2-8H7M9 20a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>进货</span>
+            </a>
+            <a class="nav-item" data-page="sales" onclick="App.switchTab('sales')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12l5-5M19 12l-7-7M3 12l9 9 9-9M9 3l-6 9 6 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>发货</span>
+            </a>
+            <a class="nav-item" data-page="transfer" onclick="App.switchTab('transfer')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>调货</span>
+            </a>
+            <a class="nav-item" data-page="return" onclick="App.switchTab('return')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 14l-4-4m0 0l4-4m-4 4h11a4 4 0 010 8h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>退货</span>
+            </a>
+            
+            
+            <a class="nav-item" data-page="inventory" onclick="App.switchTab('inventory')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18M7 14l3-3 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>库存</span>
+            </a>
+            <a class="nav-item" data-page="more" onclick="App.switchTab('more')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/></svg>
+                <span>更多</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-overlay" class="modal-overlay" style="display:none;">
+        <div id="modal-container" class="modal-container"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/app.js?v=titlefix0817v5"></script>
+</body>
+</html>
